@@ -1,0 +1,301 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="202" android:versionName="3.69" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" package="com.radio.pocketfm" platformBuildVersionCode="28" platformBuildVersionName="9">
+<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="27"/>
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+<uses-permission android:name="android.permission.WAKE_LOCK"/>
+<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.READ_CONTACTS"/>
+<uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+<uses-permission android:name="android.permission.VIBRATE" android:maxSdkVersion="23"/>
+<permission android:name="android.permission.MEDIA_CONTENT_CONTROL"/>
+<permission android:name="com.radio.pocketfm.permission.C2D_MESSAGE" android:protectionLevel="0x2"/>
+<uses-permission android:name="com.radio.pocketfm.permission.C2D_MESSAGE"/>
+<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+<uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
+<uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
+<uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+<uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT"/>
+<uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE"/>
+<uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE"/>
+<uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT"/>
+<uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE"/>
+<uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
+<uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
+<uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS"/>
+<uses-permission android:name="android.permission.READ_APP_BADGE"/>
+<uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
+<uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS"/>
+<uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ"/>
+<uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE"/>
+<uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+<application android:theme="resourceId:0x7f130016" android:label="Pocket FM" android:icon="res/mipmap-xxxhdpi-v4/ic_launcher.png" android:name="com.radio.pocketfm.app.RadioLyApplication" android:testOnly="false" android:allowBackup="true" android:largeHeap="true" android:supportsRtl="true" android:usesCleartextTraffic="true" android:networkSecurityConfig="res/xml/network_security_config.xml" android:roundIcon="res/mipmap-xxxhdpi-v4/ic_launcher_round.png" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+<receiver android:name="com.radio.pocketfm.app.mobile.services.HeaphoneActionsReceiver">
+<intent-filter>
+<action android:name="android.intent.action.MEDIA_BUTTON"/>
+</intent-filter>
+</receiver>
+<activity android:label="Pocket FM" android:name="com.radio.pocketfm.FeedActivity" android:launchMode="singleTask">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+</intent-filter>
+<intent-filter android:label="Pocket FM">
+<action android:name="android.intent.action.VIEW"/>
+<category android:name="android.intent.category.DEFAULT"/>
+<category android:name="android.intent.category.BROWSABLE"/>
+<data android:scheme="http" android:host="www.pocketfm.in" android:pathPrefix="/pocketfm"/>
+</intent-filter>
+<intent-filter android:label="Pocket FM">
+<action android:name="android.intent.action.VIEW"/>
+<category android:name="android.intent.category.DEFAULT"/>
+<category android:name="android.intent.category.BROWSABLE"/>
+<data android:scheme="pocketfm" android:host="open"/>
+</intent-filter>
+<intent-filter>
+<data android:scheme="pocketfm" android:host="open"/>
+<action android:name="android.intent.action.VIEW"/>
+<category android:name="android.intent.category.DEFAULT"/>
+<category android:name="android.intent.category.BROWSABLE"/>
+</intent-filter>
+</activity>
+<activity android:theme="resourceId:0x7f13005d" android:name="com.theartofdev.edmodo.cropper.CropImageActivity" android:screenOrientation="portrait"/>
+<activity android:label="Pocket FM" android:name="com.radio.pocketfm.SignInActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="0x32">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+</intent-filter>
+</activity>
+<activity android:label="Pocket FM" android:name="com.radio.pocketfm.app.AudioStatusFullActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="0x32">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+</intent-filter>
+</activity>
+<activity android:label="Pocket FM" android:name="com.radio.pocketfm.app.WalletActivity" android:launchMode="singleTask" android:windowSoftInputMode="0x32">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+</intent-filter>
+</activity>
+<activity android:label="Pocket FM" android:name="com.radio.pocketfm.app.NumberLoginActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="0x32">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+</intent-filter>
+</activity>
+<activity android:label="Pocket FM" android:name="com.radio.pocketfm.ProfileEditActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="0x24">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+</intent-filter>
+</activity>
+<activity android:label="Pocket FM" android:name="com.radio.pocketfm.ShareActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="0x22">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+</intent-filter>
+</activity>
+<activity android:label="Pocket FM" android:name="com.radio.pocketfm.app.TopicChooser" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="0x22">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+</intent-filter>
+</activity>
+<activity android:theme="resourceId:0x7f130017" android:name="com.radio.pocketfm.SplashActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:windowSoftInputMode="0x23">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+<category android:name="android.intent.category.LAUNCHER"/>
+</intent-filter>
+</activity>
+<activity android:theme="resourceId:0x7f13019e" android:label="Log In" android:name="com.facebook.accountkit.ui.AccountKitActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:windowSoftInputMode="0x10"/>
+<activity android:name="com.radio.pocketfm.BrahmaStudio" android:screenOrientation="portrait" android:windowSoftInputMode="0x22"/>
+<activity android:name="com.radio.pocketfm.UserPreferenceActivity"/>
+<service android:name="com.radio.pocketfm.app.mobile.services.MediaPlayerService" android:stopWithTask="false"/>
+<service android:name="com.radio.pocketfm.app.mobile.services.ExtendedFirebaseMessagingService">
+<intent-filter>
+<action android:name="com.google.firebase.MESSAGING_EVENT"/>
+</intent-filter>
+</service>
+<provider android:name="com.radio.pocketfm.app.helpers.GenericFileProvider" android:exported="false" android:authorities="com.radio.pocketfm.fileprovider" android:grantUriPermissions="true">
+<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="res/xml/fileprovider.xml"/>
+</provider>
+<receiver android:name="com.radio.pocketfm.app.receivers.DownloadReceiver"/>
+<meta-data android:name="com.facebook.accountkit.ApplicationName" android:value="Pocket FM"/>
+<meta-data android:name="com.facebook.accountkit.ClientToken" android:value="462559607155cc1be3073b0ef3e24e66"/>
+<meta-data android:name="com.facebook.sdk.ApplicationId" android:value="1049729741852134"/>
+<meta-data android:name="com.facebook.accountkit.FacebookAppEventsEnabled" android:value="true"/>
+<meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="res/drawable-nodpi-v4/icon_notif.png"/>
+<meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="d81b60"/>
+<meta-data android:name="com.google.firebase.messaging.default_notification_channel_id" android:value="notification_channel"/>
+<meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_boRdiJh3O7mGyImsxk1XvljatzjXEKGq"/>
+<meta-data android:name="io.branch.sdk.BranchKey.test" android:value="key_test_dhVfiTjXLWcJzIbtBfW2xoejrzm2tJUI"/>
+<meta-data android:name="io.branch.sdk.TestMode" android:value="false"/>
+<receiver android:name="com.radio.pocketfm.app.receivers.InstallReceiver" android:enabled="true" android:exported="true">
+<intent-filter>
+<action android:name="com.android.vending.INSTALL_REFERRER"/>
+</intent-filter>
+</receiver>
+<service android:name="com.google.android.gms.analytics.CampaignTrackingService" android:enabled="true" android:exported="false"/>
+<service android:name="com.radio.pocketfm.app.mobile.notifications.OneSignalNotificationProcessHandler" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false">
+<intent-filter>
+<action android:name="com.onesignal.NotificationExtender"/>
+</intent-filter>
+</service>
+<service android:name="com.radio.pocketfm.app.mobile.services.RadioService"/>
+<meta-data android:name="com.truecaller.android.sdk.PartnerKey" android:value="HZ3XTbe70781cb5f640cd9a595b7102bdd0fd"/>
+<meta-data android:name="com.google.android.gms.version" android:value="12451000"/>
+<activity android:theme="resourceId:0x7f130118" android:label="" android:name="com.firebase.ui.auth.KickoffActivity" android:exported="false"/>
+<activity android:theme="resourceId:0x7f130118" android:label="" android:name="com.firebase.ui.auth.ui.idp.SingleSignInActivity" android:exported="false"/>
+<activity android:theme="resourceId:0x7f130118" android:label="" android:name="com.firebase.ui.auth.ui.credentials.CredentialSaveActivity" android:exported="false"/>
+<activity android:theme="resourceId:0x7f130118" android:label="" android:name="com.firebase.ui.auth.ui.provider.GitHubLoginActivity" android:launchMode="singleTop" android:configChanges="0x5b0">
+<intent-filter android:autoVerify="true">
+<action android:name="android.intent.action.VIEW"/>
+<category android:name="android.intent.category.DEFAULT"/>
+<category android:name="android.intent.category.BROWSABLE"/>
+<data android:scheme="https" android:host="CHANGE-ME" android:path="/__/auth/handler"/>
+</intent-filter>
+</activity>
+<activity android:label="Recover password" android:name="com.firebase.ui.auth.ui.email.RecoverPasswordActivity" android:exported="false" android:windowSoftInputMode="0x10"/>
+<activity android:label="Sign in" android:name="com.firebase.ui.auth.ui.email.EmailActivity" android:exported="false" android:windowSoftInputMode="0x10"/>
+<activity android:label="Sign in with phone number" android:name="com.firebase.ui.auth.ui.phone.PhoneActivity" android:exported="false" android:windowSoftInputMode="0x15"/>
+<activity android:label="Sign in" android:name="com.firebase.ui.auth.ui.idp.WelcomeBackIdpPrompt" android:exported="false" android:windowSoftInputMode="0x10"/>
+<activity android:label="Sign in" android:name="com.firebase.ui.auth.ui.email.WelcomeBackPasswordPrompt" android:exported="false" android:windowSoftInputMode="0x10"/>
+<activity android:label="Pocket FM" android:name="com.firebase.ui.auth.ui.idp.AuthMethodPickerActivity" android:exported="false"/>
+<activity android:theme="resourceId:0x7f130269" android:label="Pocket FM" android:name="com.facebook.FacebookActivity" android:configChanges="0x5b0"/>
+<activity android:name="com.facebook.CustomTabActivity" android:exported="true">
+<intent-filter>
+<action android:name="android.intent.action.VIEW"/>
+<category android:name="android.intent.category.DEFAULT"/>
+<category android:name="android.intent.category.BROWSABLE"/>
+<data android:scheme="fbYOUR_APP_ID"/>
+</intent-filter>
+</activity>
+<provider android:name="com.firebase.ui.auth.data.client.AuthUiInitProvider" android:exported="false" android:authorities="com.radio.pocketfm.authuiinitprovider" android:initOrder="90"/>
+<activity android:name="com.facebook.accountkit.ui.AccountKitEmailRedirectActivity" android:exported="true" android:noHistory="true"/>
+<provider android:name="com.facebook.accountkit.internal.AccountKitInitProvider" android:exported="false" android:authorities="com.radio.pocketfm.AccountKitInitialization"/>
+<service android:name="com.google.firebase.components.ComponentDiscoveryService" android:exported="false">
+<meta-data android:name="com.google.firebase.components:com.google.firebase.inappmessaging.display.FirebaseInAppMessagingDisplayRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+<meta-data android:name="com.google.firebase.components:com.google.firebase.inappmessaging.FirebaseInAppMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+<meta-data android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+<meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+<meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+</service>
+<meta-data android:name="onesignal_app_id" android:value="2e1521d1-387f-4d57-9997-a170c4d68940"/>
+<meta-data android:name="onesignal_google_project_number" android:value="str:REMOTE"/>
+<receiver android:name="com.onesignal.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+<intent-filter android:priority="999">
+<action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+<category android:name="com.radio.pocketfm"/>
+</intent-filter>
+</receiver>
+<receiver android:name="com.onesignal.NotificationOpenedReceiver"/>
+<service android:name="com.onesignal.GcmIntentService"/>
+<service android:name="com.onesignal.GcmIntentJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+<service android:name="com.onesignal.RestoreJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+<service android:name="com.onesignal.RestoreKickoffJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+<service android:name="com.onesignal.SyncService" android:stopWithTask="true"/>
+<service android:name="com.onesignal.SyncJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+<activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.onesignal.PermissionsActivity"/>
+<service android:name="com.onesignal.NotificationRestoreService"/>
+<receiver android:name="com.onesignal.BootUpReceiver">
+<intent-filter>
+<action android:name="android.intent.action.BOOT_COMPLETED"/>
+<action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+</intent-filter>
+</receiver>
+<receiver android:name="com.onesignal.UpgradeReceiver">
+<intent-filter>
+<action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+</intent-filter>
+</receiver>
+<activity android:name="com.facebook.CustomTabMainActivity"/>
+<meta-data android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule" android:value="GlideModule"/>
+<activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.google.firebase.auth.internal.FederatedSignInActivity" android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN" android:exported="true" android:excludeFromRecents="true" android:launchMode="singleInstance"/>
+<service android:name="com.google.firebase.messaging.FirebaseMessagingService" android:exported="true">
+<intent-filter android:priority="-500">
+<action android:name="com.google.firebase.MESSAGING_EVENT"/>
+</intent-filter>
+</service>
+<provider android:name="com.crashlytics.android.CrashlyticsInitProvider" android:exported="false" android:authorities="com.radio.pocketfm.crashlyticsinitprovider" android:initOrder="90"/>
+<receiver android:name="com.google.android.gms.analytics.AnalyticsReceiver" android:enabled="true" android:exported="false"/>
+<service android:name="com.google.android.gms.analytics.AnalyticsService" android:enabled="true" android:exported="false"/>
+<service android:name="com.google.android.gms.analytics.AnalyticsJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false"/>
+<provider android:name="androidx.work.impl.WorkManagerInitializer" android:exported="false" android:multiprocess="true" android:authorities="com.radio.pocketfm.workmanager-init" android:directBootAware="false"/>
+<service android:name="androidx.work.impl.background.systemalarm.SystemAlarmService" android:enabled="true" android:exported="false" android:directBootAware="false"/>
+<service android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="false" android:exported="true" android:directBootAware="false"/>
+<receiver android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver" android:enabled="true" android:exported="false" android:directBootAware="false"/>
+<receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy" android:enabled="false" android:directBootAware="false">
+<intent-filter>
+<action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+<action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+</intent-filter>
+</receiver>
+<receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy" android:enabled="false" android:directBootAware="false">
+<intent-filter>
+<action android:name="android.intent.action.BATTERY_OKAY"/>
+<action android:name="android.intent.action.BATTERY_LOW"/>
+</intent-filter>
+</receiver>
+<receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy" android:enabled="false" android:directBootAware="false">
+<intent-filter>
+<action android:name="android.intent.action.DEVICE_STORAGE_LOW"/>
+<action android:name="android.intent.action.DEVICE_STORAGE_OK"/>
+</intent-filter>
+</receiver>
+<receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy" android:enabled="false" android:directBootAware="false">
+<intent-filter>
+<action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+</intent-filter>
+</receiver>
+<receiver android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver" android:enabled="false" android:directBootAware="false">
+<intent-filter>
+<action android:name="android.intent.action.BOOT_COMPLETED"/>
+<action android:name="android.intent.action.TIME_SET"/>
+<action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+</intent-filter>
+</receiver>
+<receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver" android:enabled="true" android:exported="false" android:directBootAware="false">
+<intent-filter>
+<action android:name="androidx.work.impl.background.systemalarm.UpdateProxies"/>
+</intent-filter>
+</receiver>
+<activity android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity" android:enabled="false" android:exported="false" android:process=":playcore_missing_splits_activity" android:stateNotNeeded="true" android:launchMode="singleInstance"/>
+<activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:exported="false" android:excludeFromRecents="true"/>
+<service android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:exported="true"/>
+<receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver" android:enabled="true" android:exported="false"/>
+<receiver android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES" android:enabled="true" android:exported="true">
+<intent-filter>
+<action android:name="com.android.vending.INSTALL_REFERRER"/>
+</intent-filter>
+</receiver>
+<service android:name="com.google.android.gms.measurement.AppMeasurementService" android:enabled="true" android:exported="false"/>
+<service android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false"/>
+<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:exported="true">
+<intent-filter>
+<action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+</intent-filter>
+</receiver>
+<service android:name="com.google.firebase.iid.FirebaseInstanceIdService" android:exported="true">
+<intent-filter android:priority="-500">
+<action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+</intent-filter>
+</service>
+<provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:authorities="com.radio.pocketfm.firebaseinitprovider" android:initOrder="100"/>
+<activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
+<provider android:name="com.facebook.marketing.internal.MarketingInitProvider" android:exported="false" android:authorities="com.radio.pocketfm.MarketingInitProvider"/>
+<provider android:name="com.facebook.internal.FacebookInitProvider" android:exported="false" android:authorities="com.radio.pocketfm.FacebookInitProvider"/>
+<receiver android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver" android:exported="false">
+<intent-filter>
+<action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED"/>
+</intent-filter>
+</receiver>
+<receiver android:name="com.facebook.CampaignTrackingReceiver" android:permission="android.permission.INSTALL_PACKAGES" android:exported="true">
+<intent-filter>
+<action android:name="com.android.vending.INSTALL_REFERRER"/>
+</intent-filter>
+</receiver>
+<provider android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer" android:exported="false" android:multiprocess="true" android:authorities="com.radio.pocketfm.lifecycle-process"/>
+<activity android:theme="resourceId:0x7f1301b5" android:name="com.pocket.brahmav7.CompressionActivity"/>
+<meta-data android:name="com.android.dynamic.apk.fused.modules" android:value="base,brahmaV7"/>
+<meta-data android:name="com.android.vending.splits" android:value="res/xml/splits0.xml"/>
+<meta-data android:name="com.android.vending.derived.apk.id" android:value="12"/>
+</application>
+</manifest>
