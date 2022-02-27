@@ -1,1 +1,101 @@
+Summary for /storage/emulated/0/show-java/sources/com.radio.pocketfm/jar-files/7.jar
+Decompiled with CFR 0.0
 
+
+com.truecaller.a.d
+----------------------------
+
+b(android.content.Context )
+  Loose catch block
+
+
+com.truecaller.multisim.g
+----------------------------
+
+b(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Underrun type stack
+
+
+com.truecaller.multisim.p
+----------------------------
+
+a()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Invalid stack depths @ lbl49.1 : ALOAD_1 : trying to set 1 previously set to 0
+
+
+com.truecaller.multisim.q
+----------------------------
+
+a(int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Invalid stack depths @ lbl27 : LDC : trying to set 1 previously set to 0
+a(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Underrun type stack
+a()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Invalid stack depths @ lbl41.1 : ALOAD_1 : trying to set 1 previously set to 0
+
+
+com.truecaller.multisim.u
+----------------------------
+
+a()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Invalid stack depths @ lbl39.1 : ALOAD_1 : trying to set 1 previously set to 0
+
+
+com.vincan.medialoader.b.b.b
+----------------------------
+
+d()
+  Loose catch block
+
+
+io.branch.referral.ae
+----------------------------
+
+q()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Underrun type stack
+
+
+io.grpc.a.a
+----------------------------
+
+a(io.grpc.ag )
+  Unable to fully structure code
+
+
+io.grpc.a.ab
+----------------------------
+
+a(io.grpc.ah<?, ?> io.grpc.ag io.grpc.c )
+  Unable to fully structure code
+
+
+io.grpc.a.as
+----------------------------
+
+f(io.grpc.ag )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Invalid stack depths @ lbl24.1 : GETSTATIC : trying to set 0 previously set to 1
+
+
+io.grpc.a.by
+----------------------------
+
+a(io.grpc.a.bz io.grpc.ar io.grpc.ag )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Invalid stack depths @ lbl24 : ALOAD_0 : trying to set 1 previously set to 0
+
+
+io.grpc.a.be
+----------------------------
+
+a()
+  Unable to fully structure code
+
+
+io.grpc.b.g
+----------------------------
+
+a(java.net.InetSocketAddress java.net.InetSocketAddress java.lang.String java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+run()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+run()
+  Loose catch block
