@@ -1,7 +1,0 @@
-eyeD3
-lyricsgenius
-requests
-pocket
-youtube_dl
-youtube_search
-telepot
